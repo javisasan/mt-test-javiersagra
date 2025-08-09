@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="App\Product\Domain\Entity\ProductDiscount" table="product_discount">
+        <id name="productSku" type="string" column="productSku" length="36" />
+        <field name="discount" type="integer" column="discount" length="3" nullable="false" />
+    </entity>
+</doctrine-mapping>

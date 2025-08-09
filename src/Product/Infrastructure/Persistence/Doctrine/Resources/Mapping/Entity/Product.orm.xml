@@ -3,9 +3,16 @@
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
     <entity name="App\Product\Domain\Entity\Product" table="products">
-        <id name="sku" type="string" column="id" length="8"/>
+        <id name="sku" type="string" column="sku" length="36"/>
         <field name="name" type="string" column="name" length="128" nullable="false" />
-        <field name="category" type="string" column="category" length="32" nullable="false" />
+
+        <many-to-one field="category" target-entity="Category">
+            <join-column name="category" referenced-column-name="id" />
+            <cascade>
+                <cascade-persist/>
+            </cascade>
+        </many-to-one>
+
         <field name="price" type="integer" column="price" length="32" nullable="false">
             <options>
                 <option name="unsigned" />
