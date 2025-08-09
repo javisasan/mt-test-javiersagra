@@ -7,7 +7,7 @@ class Product
     private function __construct(
         private string $sku,
         private string $name,
-        private string $category,
+        private Category $category,
         private int $price
     ) {
     }
@@ -15,7 +15,7 @@ class Product
     public static function create(
         string $sku,
         string $name,
-        string $category,
+        Category $category,
         int $price
     ) {
         return new self(
@@ -36,20 +36,22 @@ class Product
         return $this->name;
     }
 
-    public function getCategory(): string
+    public function getCategory(): Category
     {
         return $this->category;
     }
 
-    public function getPrice(): string
+    public function getPrice(): int
     {
         return $this->price;
     }
 
+    /*
     public function getPriceWithDiscountPercent(int $discountPercent): int
     {
         $discount = $this->price * ($discountPercent / 100);
 
         return $this->price - $discount;
     }
+     */
 }

@@ -1,16 +1,17 @@
 <?php
+
 namespace App\Product\Infrastructure\Persistence\Doctrine\Repository;
 
 use App\Product\Domain\Entity\Product;
 use App\Product\Domain\Repository\ProductRepositoryInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\Order;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 
 class DoctrineProductRepository extends ServiceEntityRepository  implements ProductRepositoryInterface
 {
-    /** @var EntityManagerInterface */
-    private $entityManager;
+    private EntityManagerInterface $entityManager;
 
     public function __construct(ManagerRegistry $registry)
     {
@@ -18,21 +19,33 @@ class DoctrineProductRepository extends ServiceEntityRepository  implements Prod
         $this->entityManager = $this->getEntityManager();
     }
 
-    public function findOneById(string $productId): ?Product
+    public function findOneBySku(string $sku): ?Product
     {
-        return $this->findOneBy(['id' => $productId]);
+        return $this->findOneBy(['sku' => $sku]);
     }
 
-    public function findAllProducts(): array
+    public function findProductsByCategoryAndPriceLessThan(string $category = null, ?int $priceLessThan = null): array
     {
-        return $this->findAll();
-    }
+        $qb = $this->entityManager->createQueryBuilder();
 
-    public function findProductsByCategory(?string $category): array
-    {
-        return $this->findBy([
-            'category' => $category
-        ]);
+        $qb->select('p')
+            ->from(Product::class, 'p')
+            ->innerJoin('p.category', 'c')
+            ->addOrderBy('p.price', Order::Ascending->value);
+
+        if ($category) {
+            $qb->where('c.name = :category')
+                ->setParameter('category', $category);
+        }
+
+        if ($priceLessThan) {
+            $qb->andWhere('p.price <= :priceLessThan')
+                ->setParameter('priceLessThan', $priceLessThan);
+        }
+
+        $query = $qb->getQuery();
+
+        return $query->getResult();
     }
 
     public function save(Product $product): void

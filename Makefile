@@ -15,7 +15,7 @@ help:
 	@echo
 	@echo "commands:"
 	@echo "    help             - show this help"
-	@echo "    dev              - compose up dev environment"
+	@echo "    dev              - compose up dev environment and apply JSON fixtures"
 	@echo "    nodev            - compose down dev environment"
 	@echo "    shell            - enter the container"
 	@echo "    unit             - run unit tests"
@@ -31,6 +31,7 @@ dev:
 	@docker exec $(CONTAINER) bin/console doctrine:database:create
 	@docker exec $(CONTAINER) bin/console doctrine:schema:create
 	@docker exec $(CONTAINER) bin/console product:import-from-json
+	@docker exec $(CONTAINER) bin/console discounts:import-from-json
 
 nodev:
 	@docker compose down

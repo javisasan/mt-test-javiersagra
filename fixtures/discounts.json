@@ -1,0 +1,14 @@
+{
+    "categories": [
+        {
+            "name": "boots",
+            "discount": 30
+        }
+    ],
+    "products": [
+        {
+            "sku": "000003",
+            "discount": 15
+        }
+    ]
+}

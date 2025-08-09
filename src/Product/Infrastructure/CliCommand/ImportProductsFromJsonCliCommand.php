@@ -2,9 +2,10 @@
 
 namespace App\Product\Infrastructure\CliCommand;
 
+use App\Product\Domain\Entity\Category;
 use App\Product\Domain\Entity\Product;
+use App\Product\Domain\Repository\CategoryRepositoryInterface;
 use App\Product\Domain\Repository\ProductRepositoryInterface;
-use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -14,8 +15,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 class ImportProductsFromJsonCliCommand
 {
     public function __construct(
-        private ProductRepositoryInterface $repository,
-        private EntityManagerInterface $entityManager
+        private ProductRepositoryInterface $productRepository,
+        private CategoryRepositoryInterface $categoryRepository
     )
     {
     }
@@ -26,17 +27,26 @@ class ImportProductsFromJsonCliCommand
         $products = $this->readProductsFromJsonFile();
 
         foreach ($products as $product) {
+            $category = $this->categoryRepository->findOneByName($product['category']);
+            if (empty($category)) {
+                $category = Category::create($product['category']);
+            }
+
+            $productEntity = $this->productRepository->findOneBySku($product['sku']);
+            if (!empty($productEntity)) {
+                continue;
+            }
+
             $productEntity = Product::create(
                 $product['sku'],
                 $product['name'],
-                $product['category'],
+                $category,
                 $product['price'],
             );
-            $this->entityManager->persist($productEntity);
+            $this->productRepository->save($productEntity);
             $output->write('.');
         }
 
-        $this->entityManager->flush();
         $output->writeln("\n== Product import finished!");
 
         return Command::SUCCESS;
@@ -44,7 +54,7 @@ class ImportProductsFromJsonCliCommand
 
     public function readProductsFromJsonFile(): array
     {
-        $file = __DIR__ . '/../../../../ops/mysql/products.json';
+        $file = __DIR__ . '/../../../../fixtures/products.json';
 
         $fileContent = file_get_contents($file);
 
