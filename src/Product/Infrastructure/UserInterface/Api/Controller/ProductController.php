@@ -22,6 +22,7 @@ class ProductController extends AbstractController
         $categoryFilter = $request->query->get('category');
         $priceLessThanFilter = $request->query->get('priceLessThan');
         $page = $request->query->get('page');
+
         $response = $this->messageBus->dispatch(
             new ProductsQuery(
                 $categoryFilter,

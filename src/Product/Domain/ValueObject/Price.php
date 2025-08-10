@@ -2,6 +2,8 @@
 
 namespace App\Product\Domain\ValueObject;
 
+use App\Product\Domain\Exception\InvalidPriceException;
+
 class Price
 {
     private function __construct(
@@ -14,6 +16,10 @@ class Price
         int $value,
         Currency $currency
     ) {
+        if ($value <= 0) {
+            throw new InvalidPriceException();
+        }
+
         return new self(
             $value,
             $currency
