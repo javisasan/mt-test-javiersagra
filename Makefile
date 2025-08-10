@@ -1,6 +1,7 @@
 VERSION = $(shell git describe --tags --always --dirty)
 BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
 CONTAINER = mt-php
+REDISCONTAINER = mt-redis
 
 .PHONY: help shell test cover
 
@@ -19,9 +20,8 @@ help:
 	@echo "    nodev            - compose down dev environment"
 	@echo "    shell            - enter the container"
 	@echo "    unit             - run unit tests"
-	@echo "    e2e              - run end to end tests"
-	@echo "    test             - run ALL tests (unit and end 2 end)"
 	@echo "    cache            - execute cache:clear"
+	@echo "    flush            - flush Redis cache"
 	@echo "    tree             - show git log tree"
 	@echo "    purge            - removes ALL docker containers, images and volumes in dev machine"
 	@echo
@@ -32,6 +32,7 @@ dev:
 	@docker exec $(CONTAINER) bin/console doctrine:schema:create
 	@docker exec $(CONTAINER) bin/console product:import-from-json
 	@docker exec $(CONTAINER) bin/console discounts:import-from-json
+	@docker exec $(REDISCONTAINER) redis-cli flushall
 
 nodev:
 	@docker compose down
@@ -42,15 +43,11 @@ shell:
 unit:
 	@docker exec $(CONTAINER) ./vendor/bin/phpunit --testsuite unit --stop-on-failure --colors=always
 
-e2e:
-	@docker exec $(CONTAINER) ./vendor/bin/phpunit --testsuite e2e --stop-on-failure --colors=always
-
-test:
-	@docker exec $(CONTAINER) ./vendor/bin/phpunit --testsuite unit --stop-on-failure --colors=always
-	@docker exec $(CONTAINER) ./vendor/bin/phpunit --testsuite e2e --stop-on-failure --colors=always
-
 cache:
 	@docker exec $(CONTAINER) php bin/console cache:clear
+
+flush:
+	@docker exec $(REDISCONTAINER) redis-cli flushall
 
 tree:
 	git log --graph --oneline --decorate

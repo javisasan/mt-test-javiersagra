@@ -2,6 +2,9 @@
 
 namespace App\Product\Domain\Entity;
 
+use App\Product\Domain\Exception\InvalidDiscountException;
+use App\Product\Domain\Exception\InvalidDiscountParametersException;
+
 class CategoryDiscount extends AbstractDiscount
 {
     private function __construct(
@@ -14,6 +17,10 @@ class CategoryDiscount extends AbstractDiscount
         string $categoryId,
         int $discount
     ) {
+        if (empty($categoryId) || $discount < 0 || $discount > 100) {
+            throw new InvalidDiscountParametersException();
+        }
+
         return new self(
             $categoryId,
             $discount
