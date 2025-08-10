@@ -45,8 +45,8 @@ class DoctrineProductRepository extends ServiceEntityRepository  implements Prod
     public function findProductsByCategoryAndPriceLessThan(
         string $category = null,
         ?int $priceLessThan = null,
-        ?int $limit = 5,
-        ?int $page = 1
+        ?int $page = 1,
+        ?int $limit = 5
     ): array {
         $qb = $this->entityManager->createQueryBuilder();
 

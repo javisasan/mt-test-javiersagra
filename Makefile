@@ -43,6 +43,13 @@ shell:
 unit:
 	@docker exec $(CONTAINER) ./vendor/bin/phpunit --testsuite unit --stop-on-failure --colors=always
 
+integration:
+	@docker exec $(CONTAINER) ./vendor/bin/phpunit --testsuite integration --stop-on-failure --colors=always
+
+test:
+	@docker exec $(CONTAINER) ./vendor/bin/phpunit --testsuite unit --stop-on-failure --colors=always
+	@docker exec $(CONTAINER) ./vendor/bin/phpunit --testsuite integration --stop-on-failure --colors=always
+
 cache:
 	@docker exec $(CONTAINER) php bin/console cache:clear
 

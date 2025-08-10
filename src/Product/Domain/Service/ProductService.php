@@ -4,6 +4,7 @@ namespace App\Product\Domain\Service;
 
 use App\Product\Domain\Entity\AbstractDiscount;
 use App\Product\Domain\Entity\Product;
+use App\Product\Domain\Exception\InvalidPriceDiscountException;
 
 class ProductService implements ProductServiceInterface
 {
@@ -26,6 +27,10 @@ class ProductService implements ProductServiceInterface
     {
         if ($discountPercent === 0) {
             return $product->getPrice()->getValue();
+        }
+
+        if ($discountPercent < 0 || $discountPercent > 100) {
+            throw new InvalidPriceDiscountException();
         }
 
         $price = $product->getPrice()->getValue();

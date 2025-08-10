@@ -2,7 +2,6 @@
 
 namespace App\Product\Domain\Entity;
 
-use App\Product\Domain\Exception\InvalidDiscountException;
 use App\Product\Domain\Exception\InvalidDiscountParametersException;
 
 class CategoryDiscount extends AbstractDiscount

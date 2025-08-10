@@ -22,8 +22,7 @@ class ProductsQueryHandler
         private ProductDiscountRepositoryInterface $productDiscountRepository,
         private CategoryDiscountRepositoryInterface $categoryDiscountRepository,
         private ProductServiceInterface $service
-    )
-    {
+    ) {
     }
 
     public function __invoke(ProductsQuery $query): ProductsQueryHandlerResponse
@@ -33,8 +32,8 @@ class ProductsQueryHandler
         $products = $this->productRepository->findProductsByCategoryAndPriceLessThan(
             $query->getCategoryFilter(),
             $query->getPriceLessThanFilter(),
-            self::PAGE_LIMIT,
-            $query->getPage()
+            $query->getPage(),
+            self::PAGE_LIMIT
         );
 
         /** @var Product $product */
