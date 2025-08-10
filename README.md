@@ -99,7 +99,7 @@ GET /products
 There are three query parameters available:
 
 - `category`: filters results by category
-- `proceLessThan`: retrieves only results with original price less than or equals the provided
+- `priceLessThan`: retrieves only results with original price less than or equals the provided
 - `page`: if given, returns that page of results. If not given, returns first page of 5.
 
 This application can be tested using [Postman](https://www.postman.com/) or a similar tool, but you can also use `curl` from the command line to test it.
