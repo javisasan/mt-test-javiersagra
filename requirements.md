@@ -1,4 +1,4 @@
-# mytheresa Promotions Test
+# MT Promotions Test
 
 ## Description
 
