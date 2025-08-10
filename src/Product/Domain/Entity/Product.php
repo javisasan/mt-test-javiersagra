@@ -2,13 +2,18 @@
 
 namespace App\Product\Domain\Entity;
 
+use App\Product\Domain\Exception\InvalidProductNameException;
+use App\Product\Domain\Exception\InvalidProductSkuException;
+use App\Product\Domain\ValueObject\Currency;
+use App\Product\Domain\ValueObject\Price;
+
 class Product
 {
     private function __construct(
         private string $sku,
         private string $name,
         private Category $category,
-        private int $price
+        private Price $price
     ) {
     }
 
@@ -18,11 +23,19 @@ class Product
         Category $category,
         int $price
     ) {
+        if (empty($sku) || strlen($sku) > 36) {
+            throw new InvalidProductSkuException();
+        }
+
+        if (empty($name) || strlen($name) > 128) {
+            throw new InvalidProductNameException();
+        }
+
         return new self(
             $sku,
             $name,
             $category,
-            $price
+            Price::create($price, Currency::create(Currency::EURO))
         );
     }
 
@@ -41,7 +54,7 @@ class Product
         return $this->category;
     }
 
-    public function getPrice(): int
+    public function getPrice(): Price
     {
         return $this->price;
     }

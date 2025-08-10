@@ -43,6 +43,7 @@ class DoctrineCategoryDiscountRepository extends ServiceEntityRepository  implem
 
     public function save(CategoryDiscount $categoryDiscount): void
     {
+        $this->cache->delete($this->getCacheKey($categoryDiscount->getCategoryId()));
         $this->entityManager->persist($categoryDiscount);
         $this->entityManager->flush();
     }

@@ -13,11 +13,7 @@
             </cascade>
         </many-to-one>
 
-        <field name="price" type="integer" column="price" length="32" nullable="false">
-            <options>
-                <option name="unsigned" />
-            </options>
-        </field>
+        <embedded name="price" class="App\Product\Domain\ValueObject\Price" use-column-prefix="false" />
 
         <indexes>
             <index name="product_idx_category" columns="category"/>

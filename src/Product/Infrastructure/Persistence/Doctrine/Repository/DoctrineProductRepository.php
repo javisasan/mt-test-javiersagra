@@ -42,14 +42,22 @@ class DoctrineProductRepository extends ServiceEntityRepository  implements Prod
         return $product;
     }
 
-    public function findProductsByCategoryAndPriceLessThan(string $category = null, ?int $priceLessThan = null): array
-    {
+    public function findProductsByCategoryAndPriceLessThan(
+        string $category = null,
+        ?int $priceLessThan = null,
+        ?int $limit = 5,
+        ?int $page = 1
+    ): array {
         $qb = $this->entityManager->createQueryBuilder();
+
+        $offset = $page > 0 ? $limit * ($page - 1) : 0;
 
         $qb->select('p')
             ->from(Product::class, 'p')
             ->innerJoin('p.category', 'c')
-            ->addOrderBy('p.price', Order::Ascending->value);
+            ->addOrderBy('p.price.value', Order::Ascending->value)
+            ->setMaxResults($limit)
+            ->setFirstResult($offset);
 
         if ($category) {
             $qb->where('c.name = :category')
@@ -57,7 +65,7 @@ class DoctrineProductRepository extends ServiceEntityRepository  implements Prod
         }
 
         if ($priceLessThan) {
-            $qb->andWhere('p.price <= :priceLessThan')
+            $qb->andWhere('p.price.value <= :priceLessThan')
                 ->setParameter('priceLessThan', $priceLessThan);
         }
 
@@ -68,6 +76,7 @@ class DoctrineProductRepository extends ServiceEntityRepository  implements Prod
 
     public function save(Product $product): void
     {
+        $this->cache->delete($this->getCacheKey($product->getSku()));
         $this->entityManager->persist($product);
         $this->entityManager->flush();
     }

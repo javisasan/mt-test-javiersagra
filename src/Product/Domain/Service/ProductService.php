@@ -20,30 +20,15 @@ class ProductService implements ProductServiceInterface
         }
 
         return $discountPercent;
-
-
-        /*
-        return [
-            'sku' => $product->getSku(),
-            'name' => $product->getName(),
-            'category' => $product->getCategory()->getName(),
-            'price' => [
-                'original' => $product->getPrice(),
-                'final' => $this->calculatePriceWithDiscount($product->getPrice(), $discountPercent),
-                'discount_percentage' => $discountPercent . '%',
-                'currency' => 'EUR',
-            ]
-        ];
-         */
     }
 
     public function calculatePriceWithDiscount(Product $product, int $discountPercent): int
     {
         if ($discountPercent === 0) {
-            return $product->getPrice();
+            return $product->getPrice()->getValue();
         }
 
-        $price = $product->getPrice();
+        $price = $product->getPrice()->getValue();
 
         $discount = $price * ($discountPercent / 100);
 

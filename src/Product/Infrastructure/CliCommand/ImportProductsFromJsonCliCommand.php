@@ -6,6 +6,8 @@ use App\Product\Domain\Entity\Category;
 use App\Product\Domain\Entity\Product;
 use App\Product\Domain\Repository\CategoryRepositoryInterface;
 use App\Product\Domain\Repository\ProductRepositoryInterface;
+use App\Product\Domain\ValueObject\Currency;
+use App\Product\Domain\ValueObject\Price;
 use Exception;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;

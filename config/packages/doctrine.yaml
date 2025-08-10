@@ -39,6 +39,13 @@ doctrine:
                 prefix: 'App\Product\Domain\Entity'
                 alias: AppProduct
 
+            ProductValueObject:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Product/Infrastructure/Persistence/Doctrine/Resources/Mapping/ValueObject'
+                prefix: 'App\Product\Domain\ValueObject'
+                alias: AppProductValueObject
+
         controller_resolver:
             auto_mapping: false
 

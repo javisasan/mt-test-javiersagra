@@ -43,6 +43,7 @@ class DoctrineProductDiscountRepository extends ServiceEntityRepository  impleme
 
     public function save(ProductDiscount $productDiscount): void
     {
+        $this->cache->delete($this->getCacheKey($productDiscount->getProductSku()));
         $this->entityManager->persist($productDiscount);
         $this->entityManager->flush();
     }

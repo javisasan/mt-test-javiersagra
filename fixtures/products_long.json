@@ -1,0 +1,634 @@
+{
+    "products": [
+        {
+            "sku": "000001",
+            "name": "BV Lean leather ankle boots",
+            "category": "boots",
+            "price": 89000
+        },
+        {
+            "sku": "000002",
+            "name": "BV Lean leather ankle boots",
+            "category": "boots",
+            "price": 99000
+        },
+        {
+            "sku": "000003",
+            "name": "Ashlington leather ankle boots",
+            "category": "boots",
+            "price": 71000
+        },
+        {
+            "sku": "000004",
+            "name": "Naima embellished suede sandals",
+            "category": "sandals",
+            "price": 79500
+        },
+        {
+            "sku": "000005",
+            "name": "Nathane leather sneakers",
+            "category": "sneakers",
+            "price": 59000
+        },
+        {
+            "sku":"000006",
+            "name":"non adipiscing anim",
+            "category":"hats",
+            "price":45100
+        },
+        {
+            "sku":"000007",
+            "name":"aliqua est tempor",
+            "category":"sandals",
+            "price":93400
+        },
+        {
+            "sku":"000008",
+            "name":"et quis aute",
+            "category":"gloves",
+            "price":94700
+        },
+        {
+            "sku":"000009",
+            "name":"sed id aliqua",
+            "category":"sneakers",
+            "price":57500
+        },
+        {
+            "sku":"000010",
+            "name":"commodo adipiscing ut",
+            "category":"hats",
+            "price":73100
+        },
+        {
+            "sku":"000011",
+            "name":"do ad magna",
+            "category":"sandals",
+            "price":78100
+        },
+        {
+            "sku":"000012",
+            "name":"magna proident deserunt",
+            "category":"boots",
+            "price":12100
+        },
+        {
+            "sku":"000013",
+            "name":"sunt laborum velit",
+            "category":"boots",
+            "price":16200
+        },
+        {
+            "sku":"000014",
+            "name":"eu consectetur ex",
+            "category":"hats",
+            "price":24600
+        },
+        {
+            "sku":"000015",
+            "name":"reprehenderit veniam nisi",
+            "category":"gloves",
+            "price":18000
+        },
+        {
+            "sku":"000016",
+            "name":"quis Excepteur sint",
+            "category":"sneakers",
+            "price":60800
+        },
+        {
+            "sku":"000017",
+            "name":"sint aliquip incididunt",
+            "category":"boots",
+            "price":31900
+        },
+        {
+            "sku":"000018",
+            "name":"quis ad incididunt",
+            "category":"gloves",
+            "price":54500
+        },
+        {
+            "sku":"000019",
+            "name":"exercitation velit cupidatat",
+            "category":"sneakers",
+            "price":28900
+        },
+        {
+            "sku":"000020",
+            "name":"dolore voluptate officia",
+            "category":"hats",
+            "price":56500
+        },
+        {
+            "sku":"000021",
+            "name":"Ut laborum fugiat",
+            "category":"sandals",
+            "price":58000
+        },
+        {
+            "sku":"000022",
+            "name":"ex velit ipsum",
+            "category":"boots",
+            "price":71200
+        },
+        {
+            "sku":"000023",
+            "name":"veniam dolore fugiat",
+            "category":"boots",
+            "price":46300
+        },
+        {
+            "sku":"000024",
+            "name":"ut id officia",
+            "category":"gloves",
+            "price":80400
+        },
+        {
+            "sku":"000025",
+            "name":"quis consectetur irure",
+            "category":"sandals",
+            "price":56700
+        },
+        {
+            "sku":"000026",
+            "name":"occaecat eu sed",
+            "category":"sneakers",
+            "price":40300
+        },
+        {
+            "sku":"000027",
+            "name":"ullamco elit nisi",
+            "category":"sandals",
+            "price":48100
+        },
+        {
+            "sku":"000028",
+            "name":"nostrud mollit ex",
+            "category":"hats",
+            "price":28300
+        },
+        {
+            "sku":"000029",
+            "name":"ut cillum dolor",
+            "category":"hats",
+            "price":89500
+        },
+        {
+            "sku":"000030",
+            "name":"culpa cupidatat deserunt",
+            "category":"gloves",
+            "price":21500
+        },
+        {
+            "sku":"000031",
+            "name":"consectetur tempor laboris",
+            "category":"hats",
+            "price":96100
+        },
+        {
+            "sku":"000032",
+            "name":"laboris irure Excepteur",
+            "category":"sandals",
+            "price":48800
+        },
+        {
+            "sku":"000033",
+            "name":"fugiat sunt ex",
+            "category":"hats",
+            "price":41100
+        },
+        {
+            "sku":"000034",
+            "name":"elit consectetur qui",
+            "category":"sneakers",
+            "price":12500
+        },
+        {
+            "sku":"000035",
+            "name":"Ut dolore non",
+            "category":"sandals",
+            "price":15700
+        },
+        {
+            "sku":"000036",
+            "name":"est id reprehenderit",
+            "category":"gloves",
+            "price":38300
+        },
+        {
+            "sku":"000037",
+            "name":"in laborum sunt",
+            "category":"hats",
+            "price":51600
+        },
+        {
+            "sku":"000038",
+            "name":"Ut eu qui",
+            "category":"sandals",
+            "price":39400
+        },
+        {
+            "sku":"000039",
+            "name":"aliqua consequat occaecat",
+            "category":"gloves",
+            "price":43400
+        },
+        {
+            "sku":"000040",
+            "name":"fugiat laborum cillum",
+            "category":"boots",
+            "price":32000
+        },
+        {
+            "sku":"000041",
+            "name":"deserunt Excepteur sunt",
+            "category":"gloves",
+            "price":59000
+        },
+        {
+            "sku":"000042",
+            "name":"est est mollit",
+            "category":"sneakers",
+            "price":96100
+        },
+        {
+            "sku":"000043",
+            "name":"enim id fugiat",
+            "category":"sandals",
+            "price":99900
+        },
+        {
+            "sku":"000044",
+            "name":"sit sint consequat",
+            "category":"hats",
+            "price":85700
+        },
+        {
+            "sku":"000045",
+            "name":"ea eiusmod labore",
+            "category":"sandals",
+            "price":17800
+        },
+        {
+            "sku":"000046",
+            "name":"cupidatat aute qui",
+            "category":"sneakers",
+            "price":60200
+        },
+        {
+            "sku":"000047",
+            "name":"veniam dolor est",
+            "category":"sneakers",
+            "price":60300
+        },
+        {
+            "sku":"000048",
+            "name":"velit Excepteur anim",
+            "category":"sneakers",
+            "price":82900
+        },
+        {
+            "sku":"000049",
+            "name":"eu sed eu",
+            "category":"sneakers",
+            "price":84600
+        },
+        {
+            "sku":"000050",
+            "name":"dolore officia reprehenderit",
+            "category":"gloves",
+            "price":53300
+        },
+        {
+            "sku":"000051",
+            "name":"Duis et in",
+            "category":"sneakers",
+            "price":66200
+        },
+        {
+            "sku":"000052",
+            "name":"deserunt occaecat aliqua",
+            "category":"hats",
+            "price":56500
+        },
+        {
+            "sku":"000053",
+            "name":"esse sint anim",
+            "category":"gloves",
+            "price":64600
+        },
+        {
+            "sku":"000054",
+            "name":"ex elit reprehenderit",
+            "category":"gloves",
+            "price":77300
+        },
+        {
+            "sku":"000055",
+            "name":"in cillum dolore",
+            "category":"sneakers",
+            "price":72100
+        },
+        {
+            "sku":"000056",
+            "name":"aliqua esse ut",
+            "category":"sneakers",
+            "price":92600
+        },
+        {
+            "sku":"000057",
+            "name":"sint nisi cillum",
+            "category":"gloves",
+            "price":40000
+        },
+        {
+            "sku":"000058",
+            "name":"laboris nostrud adipiscing",
+            "category":"boots",
+            "price":26900
+        },
+        {
+            "sku":"000059",
+            "name":"anim eiusmod elit",
+            "category":"sandals",
+            "price":76100
+        },
+        {
+            "sku":"000060",
+            "name":"Duis labore et",
+            "category":"sneakers",
+            "price":19300
+        },
+        {
+            "sku":"000061",
+            "name":"id ullamco incididunt",
+            "category":"hats",
+            "price":29600
+        },
+        {
+            "sku":"000062",
+            "name":"ad nisi Duis",
+            "category":"hats",
+            "price":80200
+        },
+        {
+            "sku":"000063",
+            "name":"enim reprehenderit officia",
+            "category":"sneakers",
+            "price":35900
+        },
+        {
+            "sku":"000064",
+            "name":"esse reprehenderit sunt",
+            "category":"sneakers",
+            "price":30900
+        },
+        {
+            "sku":"000065",
+            "name":"adipiscing pariatur do",
+            "category":"gloves",
+            "price":14300
+        },
+        {
+            "sku":"000066",
+            "name":"esse minim ea",
+            "category":"gloves",
+            "price":53800
+        },
+        {
+            "sku":"000067",
+            "name":"deserunt amet sit",
+            "category":"sneakers",
+            "price":10600
+        },
+        {
+            "sku":"000068",
+            "name":"velit nisi dolore",
+            "category":"hats",
+            "price":94400
+        },
+        {
+            "sku":"000069",
+            "name":"non eiusmod esse",
+            "category":"sneakers",
+            "price":23200
+        },
+        {
+            "sku":"000070",
+            "name":"sed aute ea",
+            "category":"hats",
+            "price":15900
+        },
+        {
+            "sku":"000071",
+            "name":"exercitation labore sunt",
+            "category":"sneakers",
+            "price":62100
+        },
+        {
+            "sku":"000072",
+            "name":"adipiscing cupidatat tempor",
+            "category":"gloves",
+            "price":76600
+        },
+        {
+            "sku":"000073",
+            "name":"in ipsum ullamco",
+            "category":"gloves",
+            "price":81600
+        },
+        {
+            "sku":"000074",
+            "name":"reprehenderit laborum sint",
+            "category":"sneakers",
+            "price":35300
+        },
+        {
+            "sku":"000075",
+            "name":"irure sunt ut",
+            "category":"sneakers",
+            "price":65500
+        },
+        {
+            "sku":"000076",
+            "name":"mollit ipsum labore",
+            "category":"sandals",
+            "price":43100
+        },
+        {
+            "sku":"000077",
+            "name":"Duis est ut",
+            "category":"gloves",
+            "price":43300
+        },
+        {
+            "sku":"000078",
+            "name":"nisi Duis eiusmod",
+            "category":"hats",
+            "price":49800
+        },
+        {
+            "sku":"000079",
+            "name":"ut cillum consequat",
+            "category":"sneakers",
+            "price":91400
+        },
+        {
+            "sku":"000080",
+            "name":"ullamco sunt non",
+            "category":"sandals",
+            "price":49900
+        },
+        {
+            "sku":"000081",
+            "name":"incididunt fugiat sint",
+            "category":"boots",
+            "price":80300
+        },
+        {
+            "sku":"000082",
+            "name":"do officia velit",
+            "category":"sneakers",
+            "price":11900
+        },
+        {
+            "sku":"000083",
+            "name":"labore ullamco magna",
+            "category":"hats",
+            "price":46500
+        },
+        {
+            "sku":"000084",
+            "name":"eiusmod magna dolor",
+            "category":"gloves",
+            "price":12700
+        },
+        {
+            "sku":"000085",
+            "name":"magna in ad",
+            "category":"boots",
+            "price":10400
+        },
+        {
+            "sku":"000086",
+            "name":"amet ad aliqua",
+            "category":"sneakers",
+            "price":53800
+        },
+        {
+            "sku":"000087",
+            "name":"enim dolore proident",
+            "category":"boots",
+            "price":68900
+        },
+        {
+            "sku":"000088",
+            "name":"veniam sit est",
+            "category":"hats",
+            "price":66000
+        },
+        {
+            "sku":"000089",
+            "name":"anim ut do",
+            "category":"sandals",
+            "price":70700
+        },
+        {
+            "sku":"000090",
+            "name":"aliqua aute eu",
+            "category":"boots",
+            "price":59400
+        },
+        {
+            "sku":"000091",
+            "name":"ut veniam adipiscing",
+            "category":"gloves",
+            "price":57300
+        },
+        {
+            "sku":"000092",
+            "name":"Lorem id ut",
+            "category":"gloves",
+            "price":12900
+        },
+        {
+            "sku":"000093",
+            "name":"aliquip eu exercitation",
+            "category":"gloves",
+            "price":87900
+        },
+        {
+            "sku":"000094",
+            "name":"cillum ex exercitation",
+            "category":"gloves",
+            "price":39800
+        },
+        {
+            "sku":"000095",
+            "name":"sit tempor quis",
+            "category":"boots",
+            "price":24700
+        },
+        {
+            "sku":"000096",
+            "name":"voluptate reprehenderit laboris",
+            "category":"sneakers",
+            "price":84600
+        },
+        {
+            "sku":"000097",
+            "name":"aliqua ad dolor",
+            "category":"boots",
+            "price":71800
+        },
+        {
+            "sku":"000098",
+            "name":"enim nostrud id",
+            "category":"sneakers",
+            "price":20300
+        },
+        {
+            "sku":"000099",
+            "name":"enim ea proident",
+            "category":"boots",
+            "price":26900
+        },
+        {
+            "sku":"000100",
+            "name":"occaecat exercitation pariatur",
+            "category":"boots",
+            "price":75400
+        },
+        {
+            "sku":"000101",
+            "name":"aute ut deserunt",
+            "category":"sandals",
+            "price":77900
+        },
+        {
+            "sku":"000102",
+            "name":"aliqua dolor proident",
+            "category":"sandals",
+            "price":35500
+        },
+        {
+            "sku":"000103",
+            "name":"consectetur ea nulla",
+            "category":"gloves",
+            "price":69800
+        },
+        {
+            "sku":"000104",
+            "name":"quis do sit",
+            "category":"sandals",
+            "price":13000
+        },
+        {
+            "sku":"000105",
+            "name":"ipsum dolore ipsum",
+            "category":"sandals",
+            "price":73700
+        }
+    ]
+}

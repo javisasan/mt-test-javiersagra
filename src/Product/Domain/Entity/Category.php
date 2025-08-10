@@ -2,6 +2,7 @@
 
 namespace App\Product\Domain\Entity;
 
+use App\Product\Domain\Exception\InvalidCategoryNameException;
 use App\Product\Domain\ValueObject\CategoryId;
 
 class Category
@@ -20,6 +21,10 @@ class Category
     public static function create(
         string $name,
     ) {
+        if (empty($name)) {
+            throw new InvalidCategoryNameException();
+        }
+
         return new self(
             new CategoryId(),
             $name

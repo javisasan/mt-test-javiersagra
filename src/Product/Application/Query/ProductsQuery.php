@@ -6,7 +6,8 @@ class ProductsQuery
 {
     public function __construct(
         private ?string $categoryFilter,
-        private ?string $priceLessThanFilter
+        private ?string $priceLessThanFilter,
+        private ?int $page
     ) {
     }
 
@@ -18,5 +19,10 @@ class ProductsQuery
     public function getPriceLessThanFilter(): ?string
     {
         return $this->priceLessThanFilter;
+    }
+
+    public function getPage(): int
+    {
+        return empty($this->page) ? 1 : $this->page;
     }
 }

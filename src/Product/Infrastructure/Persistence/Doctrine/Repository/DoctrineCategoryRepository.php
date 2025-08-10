@@ -48,6 +48,7 @@ class DoctrineCategoryRepository extends ServiceEntityRepository  implements Cat
 
     public function save(Category $category): void
     {
+        $this->cache->delete($this->getCacheKey($category->getId()));
         $this->entityManager->persist($category);
         $this->entityManager->flush();
     }

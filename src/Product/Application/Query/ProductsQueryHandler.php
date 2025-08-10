@@ -14,6 +14,8 @@ use App\Product\Domain\Service\ProductServiceInterface;
 
 class ProductsQueryHandler
 {
+    public const PAGE_LIMIT = 5;
+
     public function __construct(
         private ProductRepositoryInterface $productRepository,
         private CategoryRepositoryInterface $categoryRepository,
@@ -30,7 +32,9 @@ class ProductsQueryHandler
 
         $products = $this->productRepository->findProductsByCategoryAndPriceLessThan(
             $query->getCategoryFilter(),
-            $query->getPriceLessThanFilter()
+            $query->getPriceLessThanFilter(),
+            self::PAGE_LIMIT,
+            $query->getPage()
         );
 
         /** @var Product $product */
@@ -46,10 +50,10 @@ class ProductsQueryHandler
                 $product->getSku(),
                 $product->getName(),
                 $product->getCategory()->getName(),
-                $product->getPrice(),
+                $product->getPrice()->getValue(),
                 $this->service->calculatePriceWithDiscount($product, $discountPercent),
                 $discountPercent,
-                'EUR'
+                $product->getPrice()->getCurrency()->getCode()
             ));
         }
 
